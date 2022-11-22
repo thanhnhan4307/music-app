@@ -16,8 +16,9 @@ export default function ListSong() {
     })
     // console.log(DataSongs)
   return (
-    <div className='col-span-2 overflow-y-scroll'>
-        <table className='table-auto w-full'>
+    <div className='col-span-2 overflow-y-scroll relative'>
+      <div className=''>
+      <table className='table-auto w-full'>
             <thead className='text-white h-12'>
                 <tr>
                     <th>#</th>
@@ -29,7 +30,7 @@ export default function ListSong() {
             <tbody>
                 {
                     DataSongs.map((song,index)=> 
-                    <tr key={index} className={`cursor-pointer bg-slate-800 h-12 text-gray-600 hover:bg-gray-400  ${idSong === song.id && 'text-teal-400'}`} onClick={()=>handlePlaySong(song.id)}>
+                    <tr key={index} className={`cursor-pointer bg-stone-800 h-12 text-white hover:bg-zinc-500 ${idSong === song.id && 'text-teal-400'}`} onClick={()=>handlePlaySong(song.id)}>
                     <td className='text-center'>{index+1}</td>
                     <td>{song.name}</td>
                     <td className='text-center'>{song.author}</td>
@@ -42,6 +43,7 @@ export default function ListSong() {
             </tbody>
 
         </table>
+      </div>
     </div>
   )
 }
